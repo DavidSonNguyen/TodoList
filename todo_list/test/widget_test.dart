@@ -16,13 +16,16 @@ void main() {
   test("test update todo list", () async {
     AppProvider appProvider = new AppProvider();
     // update todos value
-    TodoModel model = appProvider.todos[0];
-
-    model.complete = true;
-    appProvider.update(model, 0);
-    expect(true, appProvider.todos[0].complete);
-
-    model.complete = false;
+    TodoModel model1 =
+        new TodoModel(appProvider.todos[0].name, appProvider.todos[0].complete);
+    model1.complete = false;
+    appProvider.update(model1, 0);
     expect(false, appProvider.todos[0].complete);
+
+    TodoModel model2 =
+        new TodoModel(appProvider.todos[0].name, appProvider.todos[0].complete);
+    model2.complete = true;
+    appProvider.update(model2, 0);
+    expect(true, appProvider.todos[0].complete);
   });
 }
