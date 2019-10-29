@@ -6,12 +6,12 @@ import 'package:todo_list/utils/app_utils.dart';
 import 'package:todo_list/widget/item_todo.dart';
 
 class TodoScreen extends StatefulWidget {
+  TodoScreen({Key key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _TodoState();
   }
-
-  TodoScreen({Key key}) : super(key: key);
 }
 
 class _TodoState extends State<TodoScreen> {
